@@ -54,4 +54,22 @@ INSERT INTO products (title, slug, description, price_cents, file_type, featured
   'course',
   false,
   true
+),
+(
+  'KI Business Checklists',
+  'ki-business-checklists',
+  '20+ fertige Checklisten für tägliche, wöchentliche und monatliche KI-Nutzung in deinem Business. Inklusive KI-Prompts zur Automatisierung jeder Checkliste.',
+  999,
+  'template',
+  false,
+  true
+),
+(
+  'KI Projektmanagement Workflow',
+  'ki-projektmanagement-workflow',
+  'Kompletter KI-Workflow für Projektmanagement – von der Planung bis zum Abschluss. Mit Meeting-Agenden, Status-Reports, Retrospektiven und Risikoanalyse.',
+  1499,
+  'template',
+  false,
+  true
 );

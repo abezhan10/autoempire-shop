@@ -25,6 +25,19 @@ export async function POST(request: Request) {
       currency: session.currency!,
       status: 'completed',
     }, { onConflict: 'stripe_session_id' })
+
+    await supabase.from('analytics_events').insert({
+      event_name: 'Purchase',
+      user_id: session.metadata?.userId || null,
+      session_id: session.id,
+      properties: {
+        amount: session.amount_total!,
+        currency: session.currency!,
+        product_id: session.metadata?.productId,
+        product_name: session.metadata?.productName,
+      },
+      page_url: session.success_url || null,
+    })
   }
 
   return NextResponse.json({ received: true })

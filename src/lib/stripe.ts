@@ -27,7 +27,7 @@ export async function createCheckoutSession(
         quantity: 1,
       },
     ],
-    metadata: { productId, userId },
+    metadata: { productId, userId, productName: productTitle },
     success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/cancel`,
   })

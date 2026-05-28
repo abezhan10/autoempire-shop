@@ -3,6 +3,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { CheckoutTracker } from './checkout-tracker'
 
 export default async function CheckoutSuccessPage({
   searchParams,
@@ -34,6 +35,11 @@ export default async function CheckoutSuccessPage({
 
   return (
     <div className="max-w-md mx-auto px-4 py-24 text-center">
+      <CheckoutTracker
+        amount={session.amount_total!}
+        currency={session.currency!}
+        productName={session.metadata?.productName || 'Unbekanntes Produkt'}
+      />
       <div className="text-6xl mb-6">🎉</div>
       <h1 className="text-3xl font-bold text-white">Zahlung erfolgreich!</h1>
       <p className="mt-4 text-gray-400">

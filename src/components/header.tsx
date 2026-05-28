@@ -32,6 +32,9 @@ export function Header() {
               <Link href="/dashboard" className="text-sm text-gray-300 hover:text-white transition-colors">
                 Mein Konto
               </Link>
+              <Link href="/admin" className="text-sm text-gray-300 hover:text-white transition-colors">
+                Admin
+              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">
